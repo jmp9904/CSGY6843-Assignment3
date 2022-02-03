@@ -5,12 +5,12 @@ from socket import *
 #https://realpython.com/python-sockets/
 #https://users.cs.cf.ac.uk/Dave.Marshall/PERL/node175.html - SMTP codes
 
-
+bufferSize = int(1024)
 
 def smtp_client(port=1025, mailserver='127.0.0.1'):
     msg = "\r\n My message"
     endmsg = "\r\n.\r\n"
-    bufferSize = int(1024)
+    
     # linear mail client
     # Choose a mail server (e.g. Google mail server) if you want to verify the script beyond GradeScope
 
