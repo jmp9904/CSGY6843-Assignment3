@@ -36,7 +36,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
 
     # Send MAIL FROM command and handle server response.
     # Fill in start
-    fromCommand = "'MAIL FROM: <jmp9904@nyu.edu>\r\n'"
+    fromCommand = "MAIL FROM: <jmp9904@nyu.edu>\r\n"
     clientSocket.send(fromCommand.encode())
     recv2 = clientSocket.recv(bufferSize).decode()
     #print (recv2)
@@ -44,7 +44,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
 
     # Send RCPT TO command and handle server response.
     # Fill in start
-    toCommand = "'RCPT TO: <jmp9904@nyu.edu>\r\n'"
+    toCommand = "RCPT TO: <jmp9904@nyu.edu>\r\n"
     clientSocket.send(toCommand.encode())
     recv3 = clientSocket.recv(bufferSize).decode()
     #print (recv3)
@@ -52,7 +52,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
 
     # Send DATA command and handle server response.
     # Fill in start
-    dataCommand = "'DATA\r\n'"
+    dataCommand = "DATA\r\n"
     clientSocket.send(dataCommand.encode())
     recv4 = clientSocket.recv(bufferSize).decode()
     #print (recv4)
@@ -76,7 +76,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
 
     # Send QUIT command and handle server response.
     # Fill in start
-    quitCommand = 'QUIT'
+    quitCommand = 'QUIT\r\n'
     clientSocket.send(quitCommand.encode())
     recv7 = clientSocket.recv(bufferSize).decode()
     #print (recv7)
