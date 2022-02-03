@@ -76,7 +76,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
 
     # Send QUIT command and handle server response.
     # Fill in start
-    quitCommand = 'QUIT\r\n'
+    quitCommand = 'QUIT'
     clientSocket.send(quitCommand.encode())
     recv7 = clientSocket.recv(bufferSize).decode()
     #print (recv7)
