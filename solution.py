@@ -18,7 +18,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
 
     # Fill in start
     clientSocket = socket(AF_INET, SOCK_STREAM)
-    clientSocket.connect((mailserver, port)) #client
+    clientSocket.connect((mailserver, port)) #client uses connect instead of bind
     # Fill in end
 
     recv = clientSocket.recv(bufferSize).decode()
@@ -62,7 +62,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     # Fill in start
     #using variable msg from top of code
     clientSocket.send(msg.encode())
-    recv5 = clientSocket.recv(bufferSize).decode()
+    #recv5 = clientSocket.recv(bufferSize).decode()
     #print (recv5)
     # Fill in end
 
